@@ -6,10 +6,10 @@ import Router from "./Router";
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: "#EFEFEF",
+            main: "#A9A9A9",
         },
         secondary: {
-            main: "#A9A9A9",
+            main: "#e9e2e2",
         },
     },
 });

@@ -3,6 +3,7 @@ import TopBar from "../components/TopBar";
 import {Button, ButtonGroup} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
+import logo from "../misc/translate.png";
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -11,6 +12,35 @@ const useStyles = makeStyles((theme) =>
         },
         title: {
             flexGrow: 1,
+        },
+        container: {
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+        },
+        logo: {
+            marginTop: 16,
+            marginBottom: 24,
+            [theme.breakpoints.down("xs")]: {
+                height: 200,
+            },
+            [theme.breakpoints.up("sm")]: {
+                height: 300,
+            },
+        },
+        buttonsContainer: {
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+        },
+        image: {
+            width: 250,
+            [theme.breakpoints.down("sm")]: {
+                display: "none",
+            },
         },
         button: {
             margin: 8,
@@ -45,39 +75,46 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <TopBar>
-                <ButtonGroup orientation="horizontal">
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        onClick={onMainPageClick}
-                    >
-                        Detect
-                    </Button>
+            <TopBar/>
 
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        onClick={onAboutClick}
-                    >
-                        About
-                    </Button>
+            <div className={classes.container}>
+                <img className={classes.logo} src={logo} alt="DetecTranslation Logo"/>
 
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        onClick={onCreditsClick}
-                    >
-                        Credits
-                    </Button>
-                </ButtonGroup>
-            </TopBar>
+                <div className={classes.buttonsContainer}>
+
+                    <ButtonGroup orientation="vertical">
+                        <Button
+                            className={classes.button}
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            onClick={onMainPageClick}
+                        >
+                            Detect
+                        </Button>
+
+                        <Button
+                            className={classes.button}
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            onClick={onAboutClick}
+                        >
+                            About
+                        </Button>
+
+                        <Button
+                            className={classes.button}
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            onClick={onCreditsClick}
+                        >
+                            Credits
+                        </Button>
+                    </ButtonGroup>
+                </div>
+            </div>
         </>
     )
 }

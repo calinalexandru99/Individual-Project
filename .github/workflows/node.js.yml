@@ -27,9 +27,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run the tests
-      run: npm test '--passWithNoTests'
-
     - name: Build
       run: npm run build
 

@@ -7,12 +7,6 @@ import logo from "../misc/translate.png";
 
 const useStyles = makeStyles((theme) =>
     createStyles({
-        backButton: {
-            marginRight: 8,
-        },
-        title: {
-            flexGrow: 1,
-        },
         container: {
             height: "100%",
             display: "flex",
@@ -36,15 +30,11 @@ const useStyles = makeStyles((theme) =>
             justifyContent: "space-evenly",
             alignItems: "center",
         },
-        image: {
-            width: 250,
-            [theme.breakpoints.down("sm")]: {
-                display: "none",
-            },
-        },
         button: {
             margin: 8,
             borderRadius: 20,
+            fontFamily:"sans-serif",
+            fontStyle:"Roboto",
             [theme.breakpoints.only("xs")]: {
                 width: 250,
                 fontSize: "1rem",

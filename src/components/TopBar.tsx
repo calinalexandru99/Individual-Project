@@ -16,6 +16,8 @@ const useStyles = makeStyles(() =>
         },
         title: {
             flexGrow: 1,
+            fontFamily:"sans-serif",
+            fontStyle:"Roboto",
         },
     })
 );

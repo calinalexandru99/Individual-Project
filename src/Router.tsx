@@ -1,11 +1,11 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Home from "./screens/Home";
-import Detection from "./screens/Detection";
-import About from "./screens/About";
-import Credits from "./screens/Credits";
-import InvalidPage from "./screens/InvalidPage";
+import Home from "./screens/Home/Home";
+import Detection from "./screens/Detection/Detection";
+import About from "./screens/About/About";
+import Credits from "./screens/Credits/Credits";
+import InvalidPage from "./screens/InvalidPage/InvalidPage";
 
 const useStyles = makeStyles(() =>
     createStyles({

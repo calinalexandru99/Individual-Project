@@ -1,9 +1,9 @@
 import React from "react";
-import TopBar from "../components/TopBar";
+import TopBar from "../../components/TopBar";
 import {Button, ButtonGroup} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
-import logo from "../misc/translate.png";
+import logo from "../../misc/translate.png";
 
 const useStyles = makeStyles((theme) =>
     createStyles({

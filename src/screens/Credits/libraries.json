@@ -1,0 +1,20 @@
+{
+  "@fontsource/roboto@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/fontsource/fontsource",
+    "licenseUrl": "https://github.com/fontsource/fontsource/raw/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "@material-ui/core@4.11.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mui-org/material-ui",
+    "licenseUrl": "https://github.com/mui-org/material-ui/raw/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "@material-ui/icons@4.11.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mui-org/material-ui",
+    "licenseUrl": "https://github.com/mui-org/material-ui/raw/master/LICENSE",
+    "parents": "DetecTranslation"
+  }
+}

@@ -56,8 +56,7 @@ const Credits: React.FC = () => {
             <div className={classes.container}>
                 <Card className={classes.card}>
                     <Typography className={classes.text}>
-                        Here is a list of libraries and images used, kudos to the creators for enabling us to
-                        work effectively.
+                        Here you can find a list of libraries and images used for the completion of this project:
                     </Typography>
 
                     <Typography className={classes.text}>
@@ -65,7 +64,7 @@ const Credits: React.FC = () => {
 
                     </Typography>
                     <Typography className={classes.text}>
-                        Here are the libraries that this game uses:
+                        Here are the libraries that this website uses:
                     </Typography>
                     <List className={classes.list}>
                         {getPackagesArray(libraries).map(({name, version}) => (

@@ -2,6 +2,7 @@ import React from "react";
 import TopBar from "../../components/TopBar";
 import {Card, Typography} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
+import imperial from "../../misc/imperial.png"
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -10,7 +11,7 @@ const useStyles = makeStyles((theme) =>
             width: "80%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "space-evenly",
             padding: 8,
         },
         text: {
@@ -35,7 +36,25 @@ const useStyles = makeStyles((theme) =>
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "center",
-
+        },
+        imageContainer: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            justifyItems: "center",
+            alignItems: "center",
+            marginLeft: "40%",
+        },
+        image: {
+            [theme.breakpoints.down("xs")]: {
+                width: "90%",
+            },
+            [theme.breakpoints.only("sm")]: {
+                width: "70%",
+            },
+            [theme.breakpoints.up("md")]: {
+                width: "70%",
+            },
         },
     })
 );
@@ -46,7 +65,7 @@ const About: React.FC = () => {
 
     return (
         <>
-            <TopBar showBack/>
+            <TopBar showBack />
             <div className={classes.container}>
                 <Card className={classes.card}>
 
@@ -54,12 +73,20 @@ const About: React.FC = () => {
                         This website is part of a 3rd Year Individual Project at Imperial College London. The supervisor
                         of this project is Dr. Thomas Lancaster.
                     </Typography>
+                    <div className={classes.imageContainer}>
+                        <a href="http://www.imperial.ac.uk/" target="blank">
+                            <img className={classes.image} src={imperial} alt={imperial}/>
+                        </a>
+                    </div>
                     <Typography className={classes.text}>
                         This site was created with React by Calin-Andrei Alexandru, a 3rd Year Computing student at
                         Imperial College London. The purpose of this website is to showcase the detection of
                         automatically
                         translated documents algorithm described in the Individual Project report. The report can be
-                        viewed by download the following file:
+                        viewed by downloading the following file:
+                        <a href="Project_Report.pdf" download>
+                            Report.pdf
+                        </a>
                     </Typography>
 
                 </Card>

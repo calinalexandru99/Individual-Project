@@ -84,7 +84,7 @@ const About: React.FC = () => {
                         automatically
                         translated documents algorithm described in the Individual Project report. The report can be
                         viewed by downloading the following file:
-                        <a href="Project_Report.pdf" download>
+                        <a href={"Project_Report.pdf"} download>
                             Report.pdf
                         </a>
                     </Typography>

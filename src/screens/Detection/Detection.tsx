@@ -1,11 +1,104 @@
-import React from "react";
+import React, {useState} from "react";
 import TopBar from "../../components/TopBar";
+import {Button, Card, createStyles, makeStyles, TextField, Typography} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) =>
+    createStyles({
+        container: {
+            height: "100%",
+            flex: 1,
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            marginTop: "50px",
+            [theme.breakpoints.down("sm")]: {
+                flexDirection: "column",
+            },
+            [theme.breakpoints.up("md")]: {
+                flexDirection: "row",
+            },
+        },
+        card: {
+            height: "80%",
+            width: "80%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            padding: 8,
+        },
+        text: {
+            textAlign: "center",
+            [theme.breakpoints.only("xs")]: {
+                fontSize: "1rem",
+            },
+            [theme.breakpoints.only("sm")]: {
+                fontSize: "1.25rem",
+            },
+            [theme.breakpoints.only("md")]: {
+                fontSize: "1.5rem",
+            },
+            [theme.breakpoints.up("lg")]: {
+                fontSize: "2rem",
+            },
+        },
+        button: {
+            height: "30px",
+            width: "80px",
+        },
+        buttonContainer: {
+            justifyContent:"center",
+            alignItems: "center",
+            display:"flex",
+        }
+    })
+);
 
 const Detection: React.FC = () => {
-    return (<>
-        <TopBar showBack>
 
-        </TopBar>
-    </>)
-}
+    const [text, setText] = useState("");
+    const [error, setError] = useState(false);
+
+    const onTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setError(false);
+        setText(event.target.value);
+    };
+
+    const onCheckClick = () => {
+        if (text === "") {
+            setError(true);
+        }
+    }
+
+    const classes = useStyles();
+
+    return (
+        <>
+            <TopBar showBack/>
+            <div className={classes.container}>
+                <Card className={classes.card}>
+                    <Typography className={classes.text}>
+                        In the text box below you can enter the text that you want to evaluate
+                    </Typography>
+                    <TextField
+                        margin="dense"
+                        label="Insert your text here"
+                        required
+                        size="medium"
+                        multiline
+                        type="text"
+                        error={error}
+                        helperText={error ? "Text box cannot be empty" : ""}
+                        value={text}
+                        onChange={onTextChange}
+                    />
+                    <div className={classes.buttonContainer}>
+                        <Button variant="contained" color="primary" onClick={onCheckClick} className={classes.button}>
+                            Check
+                        </Button>
+                    </div>
+                </Card>
+            </div>
+        </>
+    );
+};
 export default Detection;

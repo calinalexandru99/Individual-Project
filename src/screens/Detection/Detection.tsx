@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import TopBar from "../../components/TopBar";
 import {Button, Card, createStyles, makeStyles, TextField, Typography} from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -59,6 +60,8 @@ const Detection: React.FC = () => {
     const [text, setText] = useState("");
     const [error, setError] = useState(false);
 
+    const history = useHistory();
+
     const onTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setError(false);
         setText(event.target.value);
@@ -67,6 +70,8 @@ const Detection: React.FC = () => {
     const onCheckClick = () => {
         if (text === "") {
             setError(true);
+        } else {
+            history.push("/detection/feedback");
         }
     }
 

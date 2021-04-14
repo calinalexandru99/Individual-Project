@@ -6,6 +6,8 @@ import Detection from "./screens/Detection/Detection";
 import About from "./screens/About/About";
 import Credits from "./screens/Credits/Credits";
 import InvalidPage from "./screens/InvalidPage/InvalidPage";
+import {Feedback} from "@material-ui/icons";
+import InputFeedback from "./screens/Detection/InputFeedback";
 
 const useStyles = makeStyles(() =>
     createStyles({
@@ -33,6 +35,10 @@ const Router: React.FC = () => {
                         <Detection />
                     </Route>
 
+                    <Route exact path="/detection/feedback">
+                        <InputFeedback />
+                    </Route>
+
                     <Route exact path="/about">
                         <About />
                     </Route>
@@ -41,7 +47,7 @@ const Router: React.FC = () => {
                         <Credits />
                     </Route>
 
-                    <Route path="*">
+                    <Route path="/*">
                         <InvalidPage />
                     </Route>
                 </Switch>

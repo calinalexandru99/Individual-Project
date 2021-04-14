@@ -16,5 +16,149 @@
     "repository": "https://github.com/mui-org/material-ui",
     "licenseUrl": "https://github.com/mui-org/material-ui/raw/master/LICENSE",
     "parents": "DetecTranslation"
+  },
+  "@testing-library/jest-dom@5.11.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/testing-library/jest-dom",
+    "licenseUrl": "https://github.com/testing-library/jest-dom/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@testing-library/react@11.2.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/testing-library/react-testing-library",
+    "licenseUrl": "https://github.com/testing-library/react-testing-library/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@testing-library/user-event@12.8.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/testing-library/user-event",
+    "licenseUrl": "https://github.com/testing-library/user-event/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@types/jest@26.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@types/node@12.20.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@types/react@17.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@types/react-dom@17.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@types/react-router-dom@5.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@typescript-eslint/eslint-plugin@4.20.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/typescript-eslint/typescript-eslint",
+    "licenseUrl": "https://github.com/typescript-eslint/typescript-eslint/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "@typescript-eslint/parser@4.20.0": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/typescript-eslint/typescript-eslint",
+    "licenseUrl": "https://github.com/typescript-eslint/typescript-eslint/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "eslint-config-airbnb@18.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/iamturns/eslint-config-airbnb-typescript",
+    "licenseUrl": "https://github.com/iamturns/eslint-config-airbnb-typescript/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "eslint-plugin-import@2.22.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/benmosher/eslint-plugin-import",
+    "licenseUrl": "https://github.com/benmosher/eslint-plugin-import/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "eslint-plugin-jsx-a11y@6.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/evcohen/eslint-plugin-jsx-a11y",
+    "licenseUrl": "https://github.com/evcohen/eslint-plugin-jsx-a11y/raw/master/LICENSE.md",
+    "parents": "spot-the-lesion"
+  },
+  "eslint-plugin-react@7.23.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/yannickcr/eslint-plugin-react",
+    "licenseUrl": "https://github.com/yannickcr/eslint-plugin-react/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "eslint-plugin-react-hooks@4.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "gh-pages@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/tschaub/gh-pages",
+    "licenseUrl": "https://github.com/tschaub/gh-pages/blob/main/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "notistack@1.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/iamhosseindhv/notistack",
+    "licenseUrl": "https://github.com/iamhosseindhv/notistack/raw/master/LICENSE.md",
+    "parents": "spot-the-lesion"
+  },
+  "prettier@2.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/prettier/prettier",
+    "licenseUrl": "https://github.com/prettier/prettier/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "react@17.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "react-dom@17.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "react-router-dom@5.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ReactTraining/react-router",
+    "licenseUrl": "https://github.com/ReactTraining/react-router/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "react-scripts@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/create-react-app",
+    "licenseUrl": "https://github.com/facebook/create-react-app/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
+  },
+  "typescript@4.2.3": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/Microsoft/TypeScript",
+    "licenseUrl": "https://github.com/Microsoft/TypeScript/raw/master/LICENSE.txt",
+    "parents": "spot-the-lesion"
+  },
+  "web-vitals@1.1.1": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/GoogleChrome/web-vitals",
+    "licenseUrl": "https://github.com/GoogleChrome/web-vitals/raw/master/LICENSE",
+    "parents": "spot-the-lesion"
   }
 }

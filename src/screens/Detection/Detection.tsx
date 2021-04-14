@@ -42,8 +42,9 @@ const useStyles = makeStyles((theme) =>
             },
         },
         button: {
-            height: "30px",
-            width: "80px",
+            height: "60px",
+            width: "150px",
+            fontSize: "2rem",
         },
         buttonContainer: {
             justifyContent:"center",
@@ -77,7 +78,7 @@ const Detection: React.FC = () => {
             <div className={classes.container}>
                 <Card className={classes.card}>
                     <Typography className={classes.text}>
-                        In the text box below you can enter the text that you want to evaluate
+                        In the box below you can enter the text that you want to evaluate
                     </Typography>
                     <TextField
                         margin="dense"

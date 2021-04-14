@@ -97,6 +97,11 @@ const Detection: React.FC = () => {
                             Check
                         </Button>
                     </div>
+
+                    <Typography className={classes.text}>
+                        After pressing the Check button you will be redirected to a new page where the results of the
+                        evaluation will be shown.
+                    </Typography>
                 </Card>
             </div>
         </>

@@ -127,7 +127,7 @@ const About: React.FC = () => {
                         size="large"
                         onClick={onButtonClick}
                     >
-                        Go to Detection tab
+                        Go to Detection page
                     </Button>
 
                 </Card>

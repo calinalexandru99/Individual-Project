@@ -6,7 +6,6 @@ import Detection from "./screens/Detection/Detection";
 import About from "./screens/About/About";
 import Credits from "./screens/Credits/Credits";
 import InvalidPage from "./screens/InvalidPage/InvalidPage";
-import {Feedback} from "@material-ui/icons";
 import InputFeedback from "./screens/Detection/InputFeedback";
 
 const useStyles = makeStyles(() =>

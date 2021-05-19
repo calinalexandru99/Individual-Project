@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
+import sys
 
 class Language(Enum):
     DUTCH = 0
@@ -826,7 +827,7 @@ swedish_stop_words = ["aderton", "adertonde", "adjö", "aldrig", "alla", "allas"
                       "övermorgon", "överst", "övre"]
 
 # the text to be evaluated
-input_text = "You can find here English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress."
+input_text = sys.argv[1]
 
 input_text_character_count = len(input_text)
 

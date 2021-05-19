@@ -71,7 +71,8 @@ const Detection: React.FC = () => {
         if (text === "") {
             setError(true);
         } else {
-            history.push("/detection/feedback");
+            localStorage.setItem('inputText', text)
+            history.push("/detection/feedback")
         }
     }
 

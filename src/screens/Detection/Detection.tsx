@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import TopBar from "../../components/TopBar";
-import {Button, Card, createStyles, makeStyles, TextField, Typography} from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import {Button, Card, createStyles, Grid, makeStyles, TextField, Typography} from "@material-ui/core";
+import axios from "axios";
+import {handleAxiosError} from "../../utils/AxiosUtils";
+import {useSnackbar} from "notistack";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -26,6 +29,7 @@ const useStyles = makeStyles((theme) =>
             flexDirection: "column",
             justifyContent: "space-evenly",
             padding: 8,
+            marginTop: 50
         },
         text: {
             textAlign: "center",
@@ -48,19 +52,26 @@ const useStyles = makeStyles((theme) =>
             fontSize: "2rem",
         },
         buttonContainer: {
-            justifyContent:"center",
+            justifyContent: "center",
             alignItems: "center",
-            display:"flex",
+            display: "flex",
+        },
+        typography: {
+            whiteSpace: "pre-line"
         }
     })
 );
+
+const axiosConfig = {headers: {"content-type": "multipart/form-data"}};
 
 const Detection: React.FC = () => {
 
     const [text, setText] = useState("");
     const [error, setError] = useState(false);
+    const [results, setResults] = useState("");
+    const [evaluating, setEvaluating] = useState(false);
 
-    const history = useHistory();
+    const {enqueueSnackbar} = useSnackbar();
 
     const onTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setError(false);
@@ -71,8 +82,60 @@ const Detection: React.FC = () => {
         if (text === "") {
             setError(true);
         } else {
-            localStorage.setItem('inputText', text)
-            history.push("/detection/feedback")
+            setEvaluating(true)
+            const formData = new FormData();
+            formData.append("text", text);
+            axios
+                .post("http://individual-project-app.herokuapp.com/result/", formData, axiosConfig)
+                .then((response) => {
+                    const success = response.status === 200;
+
+                    if (success) {
+                        setResults(response.data)
+                        console.log(response.data)
+                    }
+
+                    /* Enqueue snackbar with the Server Response */
+                    const responseSnackbarOptions = success
+                        ? {
+                            anchorOrigin: {
+                                vertical: "bottom",
+                                horizontal: "left",
+                            },
+                            autoHideDuration: 6000,
+                            variant: "success",
+                        }
+                        : {
+                            anchorOrigin: {
+                                vertical: "bottom",
+                                horizontal: "right",
+                            },
+                            autoHideDuration: 3000,
+                            variant: "error"
+                        };
+
+                    // @ts-ignore
+                    enqueueSnackbar("Evaluation Finished", responseSnackbarOptions);
+                    setEvaluating(false)
+                })
+                .catch((error) => {
+                    if (axios.isAxiosError(error)) {
+                        handleAxiosError(error);
+
+                        if (error.response) {
+
+                            /* Enqueue snackbar with the Server Error */
+                            enqueueSnackbar(error.response.data, {
+                                anchorOrigin: {
+                                    vertical: "bottom",
+                                    horizontal: "right",
+                                },
+                                autoHideDuration: 3000,
+                                variant: "error"
+                            });
+                        }
+                    }
+                });
         }
     }
 
@@ -81,7 +144,12 @@ const Detection: React.FC = () => {
     return (
         <>
             <TopBar showBack/>
-            <div className={classes.container}>
+            <Grid
+                container
+                direction="column"
+                justify="space-evenly"
+                alignItems="center"
+            >
                 <Card className={classes.card}>
                     <Typography className={classes.text}>
                         In the box below you can enter the text that you want to evaluate
@@ -105,11 +173,24 @@ const Detection: React.FC = () => {
                     </div>
 
                     <Typography className={classes.text}>
-                        After pressing the Check button you will be redirected to a new page where the results of the
-                        evaluation will be shown.
+                        After pressing the Check button the results of the evaluation will be displayed below. The
+                        computation time may vary between 10 to 30 seconds.
                     </Typography>
                 </Card>
-            </div>
+                <div>
+                    {evaluating && <CircularProgress size="150px"/>}
+                </div>
+                <Card className={classes.card}>
+                    <Typography className={classes.text}>
+                        The results of the evaluation will be displayed in this box. For each different URL identified, one or
+                        more suspicious text chunks will be displayed. Inspection of the URLs is recommended for a
+                        potential case of cross-language plagiarism.
+                    </Typography>
+                    <Typography className={classes.typography}>
+                        {results}
+                    </Typography>
+                </Card>
+            </Grid>
         </>
     );
 };

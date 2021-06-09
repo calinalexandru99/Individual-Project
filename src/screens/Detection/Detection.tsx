@@ -86,7 +86,7 @@ const Detection: React.FC = () => {
             const formData = new FormData();
             formData.append("text", text);
             axios
-                .post("http://individual-project-app.herokuapp.com/result/", formData, axiosConfig)
+                .post("https://individual-project-app.herokuapp.com/result/", formData, axiosConfig)
                 .then((response) => {
                     const success = response.status === 200;
 

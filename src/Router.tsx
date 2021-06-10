@@ -6,7 +6,6 @@ import Detection from "./screens/Detection/Detection";
 import About from "./screens/About/About";
 import Credits from "./screens/Credits/Credits";
 import InvalidPage from "./screens/InvalidPage/InvalidPage";
-import InputFeedback from "./screens/Detection/InputFeedback";
 
 const useStyles = makeStyles(() =>
     createStyles({
@@ -32,10 +31,6 @@ const Router: React.FC = () => {
 
                     <Route exact path="/detection">
                         <Detection />
-                    </Route>
-
-                    <Route exact path="/detection/feedback">
-                        <InputFeedback />
                     </Route>
 
                     <Route exact path="/about">

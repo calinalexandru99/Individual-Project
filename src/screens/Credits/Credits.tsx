@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import TopBar from "../../components/TopBar";
-import {Card, List, ListItem, ListItemText, Typography} from "@material-ui/core";
-import libraries from "./libraries.json";
+import {AppBar, Card, List, ListItem, ListItemText, Tab, Tabs, Typography} from "@material-ui/core";
+import websiteLibraries from "./websiteLibraries.json";
+import algorithmPackages from "./algorithmPackages.json";
 import {getPackagesArray} from "./CreditsUtils";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
+import Panel from "../../components/Panel";
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -43,6 +45,15 @@ const useStyles = makeStyles((theme) =>
             justifyContent: "center",
             alignItems: "center",
         },
+        appBar: {
+            backgroundColor: "#EFEFEF",
+        },
+        tabIndicator: {
+            backgroundColor: "#A9A9A9",
+        },
+        tab: {
+            fontSize: "1rem",
+        }
     })
 );
 
@@ -50,30 +61,66 @@ const Credits: React.FC = () => {
 
     const classes = useStyles();
 
+    const [currentTab, setCurrentTab] = useState(0);
+
+    // @ts-ignore
+    const onTabChange = (_event, newValue: number) => setCurrentTab(newValue);
+
     return (
         <>
             <TopBar showBack/>
+
+            <AppBar className={classes.appBar} position="sticky">
+                <Tabs
+                    classes={{indicator: classes.tabIndicator}}
+                    variant="fullWidth"
+                    centered
+                    aria-label="Credits pages"
+                    value={currentTab}
+                    onChange={onTabChange}
+                >
+                    <Tab className={classes.tab} label="About the website"/>
+
+                    <Tab className={classes.tab} label="About the algorithm"/>
+                </Tabs>
+            </AppBar>
+
             <div className={classes.container}>
-                <Card className={classes.card}>
-                    <Typography className={classes.text}>
-                        Here you can find a list of libraries and images used for the completion of this project:
-                    </Typography>
+                <Panel value={currentTab} index={0}>
+                    <Card className={classes.card}>
+                        <Typography className={classes.text}>
+                            The logo of the website is made by <a href="https://www.freepik.com"
+                                                                  title="Freepik">Freepik</a> from <a
+                            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                        </Typography>
+                        <Typography className={classes.text}>
+                            Here you can find a list of the libraries used for the creation of the website:
+                        </Typography>
+                        <List className={classes.list}>
+                            {getPackagesArray(websiteLibraries).map(({name, version}) => (
+                                <ListItem key={name}>
+                                    <ListItemText primary={name} secondary={version}/>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Card>
+                </Panel>
 
-                    <Typography className={classes.text}>
-                        You can find a link to the authors and the licenses for the images by clicking here:{" "}
-
-                    </Typography>
-                    <Typography className={classes.text}>
-                        Here are the libraries that this website uses:
-                    </Typography>
-                    <List className={classes.list}>
-                        {getPackagesArray(libraries).map(({name, version}) => (
-                            <ListItem key={name}>
-                                <ListItemText primary={name} secondary={version}/>
-                            </ListItem>
-                        ))}
-                    </List>
-                </Card>
+                <Panel value={currentTab} index={1}>
+                    <Card className={classes.card}>
+                        <Typography className={classes.text}>
+                            Here you can find of list of packages used for the creation of the cross-language plagiarism
+                            detection algorithm:
+                        </Typography>
+                        <List className={classes.list}>
+                            {getPackagesArray(algorithmPackages).map(({name, version}) => (
+                                <ListItem key={name}>
+                                    <ListItemText primary={name} secondary={version}/>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Card>
+                </Panel>
             </div>
         </>
     );

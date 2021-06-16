@@ -1,3 +1,62 @@
 {
-
+  "yake: 0.4.7": {
+    "licenses": "GNU General Public License" ,
+    "repository": "https://github.com/LIAAD/yake",
+    "licenseUrl": "https://github.com/LIAAD/yake/blob/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "googletrans: 4.0.0rc1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ssut/py-googletrans",
+    "licenseUrl": "https://github.com/ssut/py-googletrans/blob/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "googlesearch-python: 2020.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Nv7-GitHub/googlesearch",
+    "licenseUrl": "https://github.com/Nv7-GitHub/googlesearch/blob/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "bs4: 0.0.1": {
+    "licenses": "MIT",
+    "repository": "https://pypi.org/project/beautifulsoup4/#files",
+    "licenseUrl": "https://pypi.org/project/beautifulsoup4/#files",
+    "parents": "DetecTranslation"
+  },
+  "beautifulsoup4: 4.9.1": {
+    "licenses": "MIT",
+    "repository": "https://pypi.org/project/beautifulsoup4/#files",
+    "licenseUrl": "https://pypi.org/project/beautifulsoup4/#files",
+    "parents": "DetecTranslation"
+  },
+  "sklearn~=0.0": {
+    "licenses": "BSD3-Clause License",
+    "repository": "https://github.com/scikit-learn/scikit-learn",
+    "licenseUrl": "https://github.com/scikit-learn/scikit-learn/blob/main/COPYING",
+    "parents": "DetecTranslation"
+  },
+  "scikit-learn: 0.24.2": {
+    "licenses": "BSD3-Clause License",
+    "repository": "https://github.com/scikit-learn/scikit-learn",
+    "licenseUrl": "https://github.com/scikit-learn/scikit-learn/blob/main/COPYING",
+    "parents": "DetecTranslation"
+  },
+  "Flask: 2.0.0": {
+    "licenses": "BSD3-Clause License",
+    "repository": "https://github.com/pallets/flask",
+    "licenseUrl": "https://github.com/pallets/flask/blob/main/LICENSE.rst",
+    "parents": "DetecTranslation"
+  },
+  "flask_cors: 3.0.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/CoryDolphin/flask-cors",
+    "licenseUrl": "https://github.com/corydolphin/flask-cors/blob/master/LICENSE",
+    "parents": "DetecTranslation"
+  },
+  "lxml: 4.6.3": {
+    "licenses": "BSD3-Clause License",
+    "repository": "https://github.com/lxml/lxml",
+    "licenseUrl": "https://github.com/lxml/lxml/blob/master/LICENSE.txt",
+    "parents": "DetecTranslation"
+  }
 }

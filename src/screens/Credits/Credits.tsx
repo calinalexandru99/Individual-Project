@@ -109,8 +109,8 @@ const Credits: React.FC = () => {
                 <Panel value={currentTab} index={1}>
                     <Card className={classes.card}>
                         <Typography className={classes.text}>
-                            Here you can find of list of packages used for the creation of the cross-language plagiarism
-                            detection algorithm:
+                            Here you can find a list of packages used for the creation of the cross-language plagiarism
+                            detection algorithm and the back-end server:
                         </Typography>
                         <List className={classes.list}>
                             {getPackagesArray(algorithmPackages).map(({name, version}) => (
